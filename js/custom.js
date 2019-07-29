@@ -28,7 +28,7 @@ $j.ajax({
 });
 
 
-function myFunction() {
+function NavbarFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
