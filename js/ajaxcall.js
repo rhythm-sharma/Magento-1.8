@@ -1,6 +1,6 @@
 console.log('hello rhythm');
 
-var $j = jQuery.noConflict(); 
+var $j = jQuery.noConflict();
 
 $j.ajax({
     url: "https://optimus.pipabella.com/v1/search/67?page=1&sort_type=New%20Arrivals&f=&rows=10",
