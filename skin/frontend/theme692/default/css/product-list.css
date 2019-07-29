@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100&display=swap');
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product > p{
+    font-weight: 900;
+    width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}    
+
+.product{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.breadcrumbs{
+  margin: 150px 0px 0px 0px !important; 
+}
+
+  /* HEADER>PHTML NAVIGATION BAR CSS */
+
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    top: 0px;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    height: 50px;
+  }
+
+  .topnav {
+    overflow: auto;
+    background-color: white;
+    top: 50px;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 0px 2.5px #aaaaaa;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 3px;
+  }
+  
+  .topnav a:hover {
+    color: #d62598;
+  }
+
+  .track-order{
+    font-size: 15px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+
+  .pb {
+    margin: 0 20% 0 45%;
+  }
+
+  .icons{
+    margin: 1% 0 0 10%;
+  }
+  
+  i {
+    margin: 0 2px 0 2px;
+  }
+  
+  /* .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  } */
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+@media screen and (max-width:800px) {
+
+  .pb {
+    margin: 0 25% 0px 25% !important;
+  }
+
+  .icons{
+    margin: 1% 0 0 1% !important;
+  }
+
+  .topnav, .toolbar {
+    margin: 0px 0px 0px -13px;
+  }
+
+  .responsive {
+    overflow: scroll;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 799px) {
+
+  .pb {
+    margin: 0 25% 0 30% !important;
+  }
+
+  .icons{
+    margin: 1% 0 0 1% !important;
+  }
+  
+  .topnav, .toolbar {
+    margin: 0px  0px 0px -10px ;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  
+  .pb {
+    margin: 0  35% 0 35% !important;
+  }
+
+  .icons{
+    display: none !important;
+  }
+
+  .topnav, .toolbar {
+    margin: 0px 0px 0px -10px ;
+  }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .pb {
+    margin: 0 20% 0 40%;
+  }
+
+  .icons{
+    margin: 1% 0 0 10%;
+  }
+
+  .topnav a {display: none;}
+  
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
