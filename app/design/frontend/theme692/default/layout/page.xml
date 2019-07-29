@@ -50,7 +50,7 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>scriptaculous/builder.js</script></action>
                 <action method="addJs"><script>scriptaculous/effects.js</script></action>
                 <action method="addJs"><script>jquery.js</script></action>
-                <action method="addJs"><script>custom.js</script></action>
+                <action method="addJs"><script>navbar.js</script></action>
                 <action method="addJs"><script>scriptaculous/dragdrop.js</script></action>
                 <action method="addJs"><script>scriptaculous/controls.js</script></action>
                 <action method="addJs"><script>scriptaculous/slider.js</script></action>

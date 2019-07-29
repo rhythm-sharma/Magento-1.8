@@ -2,11 +2,6 @@ console.log('hello rhythm');
 
 var $j = jQuery.noConflict(); 
 
-// $j(document).ready(function(){
-//     $j("#info").css("padding","100px");
-// });
-
-
 $j.ajax({
     url: "https://optimus.pipabella.com/v1/search/67?page=1&sort_type=New%20Arrivals&f=&rows=10",
     type: "GET",
@@ -27,15 +22,6 @@ $j.ajax({
     }
 });
 
-
-function NavbarFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
 
 {/* <div class="products">
     
