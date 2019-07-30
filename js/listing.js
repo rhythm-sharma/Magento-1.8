@@ -9,9 +9,17 @@ $j(document).ready(function() {
     $j("#swipe").hide();
     $j("#top-icon-menu").hide();
     $j("#header-container").hide();
+    $j(".actions").hide();
     $j("#next-button").click(function () {
+        $j("html, body").animate({ scrollTop: 0 }, 50);
+        $j('#productContainer').hide();
+        $j('#loading').show();
         fetchProducts()
     });
+
+    /* loading gif */
+    $j('#productContainer').hide();
+    $j('#loading').show();
 });
 
 
@@ -21,6 +29,7 @@ function fetchProducts () {
     
     var listingApiPath = `${LISTING_API_PATH}?page=${pageNo}&sort_type=${sortType}&f=&rows=${rowNo}`;
     pageNo += 1;
+
     $j.ajax({
         url: listingApiPath,
         type: "GET",
@@ -28,7 +37,10 @@ function fetchProducts () {
             showProductAttr('productContainer', 'product', 'productName', data);
             showProductAttr('productContainer', 'product', 'productImage', data);
             showProductAttr('productContainer', 'product', 'productPrice', data);
-            loadingProduct = true;
+            setTimeout(function(){
+                $j('#productContainer').show();
+                $j('#loading').hide();
+            },2000)
         }
     });
 }
