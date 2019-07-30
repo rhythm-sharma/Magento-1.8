@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100&display=swap');
 
-.products{
+.product-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product > p{
     font-weight: 900;
-    width: 270px;
+    width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -19,155 +20,121 @@
     flex-direction: column;
 }
 
-.breadcrumbs{
-  margin: 150px 0px 0px 0px !important; 
+.container {
+  padding: 0px !important;
+  margin: 0 0 0 2% !important;
 }
 
-.main {
-  margin: 70px 0px 0px 0px !important;
-}
-  /* HEADER>PHTML NAVIGATION BAR CSS */
-
-  .toolbar {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    top: 0px;
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    box-shadow: 0px 0px 5px #aaaaaa;
-    max-height: 50px;
-  }
-
-  .topnav {
-    overflow: auto;
-    background-color: white;
-    top: 50px;
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    box-shadow: 0px 0px 2.5px #aaaaaa;
-    margin: 0px 0px 50px 0px;
-    max-height: 40%;
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 3px;
-  }
-  
-  .topnav a:hover {
-    color: #d62598;
-  }
-
-  .track-order{
-    font-size: 15px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-  }
-
-  .pb {
-    margin: 0 20% 0 45%;
-  }
-
-  .icons{
-    margin: 1% 0 0 10%;
-  }
-  
-  i {
-    margin: 0 2px 0 2px;
-  }
-  
-  /* .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-  } */
-  
-  .topnav .icon {
-    display: none;
-  }
-  
-@media screen and (max-width:800px) {
-
-  .pb {
-    margin: 0 25% 0px 25% !important;
-  }
-
-  .icons{
-    margin: 1% 0 0 1% !important;
-  }
-   
-  .toolbar {
-    margin: 0px  0px 0px -10px ;
-  }
-
-  .topnav, .toolbar {
-    margin: 0px  0px 50px -10px ;
-  }
-  
-  .responsive {
-    overflow: scroll;
-  }
+.next-button-container{
+  display: flex;
+  justify-content: center;
 }
 
-@media (min-width: 601px) and (max-width: 799px) {
-
-  .pb {
-    margin: 0 25% 0 30% !important;
-  }
-
-  .icons{
-    margin: 1% 0 0 1% !important;
-  }
-  
-  .toolbar {
-    margin: 0px  0px 0px -10px ;
-  }
-
-  .topnav, .toolbar {
-    margin: 0px  0px 50px -10px ;
-  }
+.next-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: black !important;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2.5px;
 }
 
-@media (min-width: 300px) and (max-width: 600px) {
-  
-  .pb {
-    margin: 0  35% 0 35% !important;
-  }
-
-  .icons{
-    display: none !important;
-  }
-   
-  .toolbar {
-    margin: 0px  0px 0px -10px ;
-  }
-
-  .topnav, .toolbar {
-    margin: 0px  0px 50px -10px ;
-  }
+.next-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
+.next-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
 
+.next-button:hover span {
+  padding-right: 25px;
+}
+
+.next-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* HEADER>PHTML NAVIGATION BAR CSS */
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  box-shadow: 0px 0px 5px #aaaaaa;
+  max-height: 50px;
+}
+
+.topnav {
+  overflow: auto;
+  background-color: white;
+  top: 50px;
+  left: 0px;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  box-shadow: 0px 0px 2.5px #aaaaaa;
+  margin: 0px 0px 50px 0px;
+  max-height: 40%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 3px;
+}
+
+.topnav a:hover {
+  color: #d62598;
+}
+
+.pb {
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.icons {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+i {
+  margin: 5px 3px 0 3px;
+}
+
+.topnav .icon {
+  display: none;
+}
 
 @media screen and (max-width: 1200px) {
 
-  .pb {
-    margin: 0 20% 0 40%;
-  }
-
-  .icons{
-    margin: 1% 0 0 10%;
-  }
-
   .topnav a {display: none;}
-  
+
   .topnav a.icon {
     float: right;
     display: block;
@@ -185,3 +152,34 @@
     text-align: left;
   }
 }
+
+
+
+
+/* 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="toolbar">
+        <img class="pb" src="https://d1jbf5z8givhnm.cloudfront.net/skin/frontend/unifiedtheme/default/images/pblogo_bold_v3.png" alt="PipaBela" height="50px;">
+        <div class="icons">
+            <i class="fa fa-search fa-2x search-bar" aria-hidden="true"></i>
+            <i class="fa fa-user fa-2x user-log" aria-hidden="true"></i>
+            <i class="fa fa-heart fa-2x whishlist"></i>
+            <i class="fa fa-shopping-bag fa-2x shopping-cart"></i>
+        </div>
+    </div>
+
+<div class="topnav" id="myTopnav">
+    <a href="product-list">What's New</a>
+    <a href="product-list">Shop By Category</a>
+    <a href="product-list">Shop By Collection</a>
+    <a href="product-list">Shop By Material</a>
+    <a href="product-list">Shop By Price</a>
+    <a href="product-list">Shop By Material</a>
+    <a href="product-list">Create your jewellery</a>
+    <a href="product-list">Rakhi</a>
+    <a href="#" class="icon" onclick="NavbarFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div> */

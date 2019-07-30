@@ -86,7 +86,6 @@ Default layout, loads most of the pages
                 <action method="addCss"><stylesheet>css/jquery-ui.structure.min.css</stylesheet></action>
 
                 <action method="addCss"><stylesheet>css/font-awesome.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/product-list.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/jquery.bxslider.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/photoswipe.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
