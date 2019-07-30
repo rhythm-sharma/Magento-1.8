@@ -28,62 +28,71 @@
  */
 
 ?>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<div class="toolbar">
-        <img class="pb" src="https://d1jbf5z8givhnm.cloudfront.net/skin/frontend/unifiedtheme/default/images/pblogo_bold_v3.png" alt="PipaBela" height="50px;">
-        <div class="icons">
-            <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-heart fa-2x"></i>
-            <i class="fa fa-shopping-bag fa-2x"></i>
+<div class="shadow"></div>
+<div class="swipe-left"></div>
+<div class="swipe">
+    <div class="swipe-menu">
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->__('Home') ?>" class="home-link"><?php echo $this->__('Home') ?></a>
+        <?php echo $this->getChildHtml('topLinks') ?>
+        <?php echo $this->getChildHtml('currency_2') ?>
+        <?php echo $this->getChildHtml('store_language_2') ?>
+        <?php echo $this->getChildHtml('footer_links') ?>
+        <?php echo $this->getChildHtml('cms_footer_links') ?>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cms_footer_links')->toHtml() ?>   
+        <div class="footer-links-menu"> 
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml() ?>  
+            <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header.phtml')->toHtml(); ?>
         </div>
     </div>
-
-<div class="topnav" id="myTopnav">
-    <a href="product-list">What's New</a>
-    <a href="product-list">Shop By Category</a>
-    <a href="product-list">Shop By Collection</a>
-    <a href="product-list">Shop By Material</a>
-    <a href="product-list">Shop By Price</a>
-    <a href="product-list">Shop By Material</a>
-    <a href="product-list">Create your jewellery</a>
-    <a href="product-list">Rakhi</a>
-    <a href="#" class="icon" onclick="NavbarFunction()">
-        <i class="fa fa-bars"></i>
-    </a>
+</div>
+<div class="top-icon-menu">
+    <div class="swipe-control"><i class="fa fa-align-justify"></i></div>
+    <div class="top-search"><i class="fa fa-search"></i></div>
+    <span class="clear"></span>
 </div>
 
-<!-- <div class="navbar-container">
+<div class="header-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+                <div class="header">
+                        <div class="header-border">
+                            <div class="header-buttons">
+                                <?php echo $this->getChildHtml('store_language') ?>
+                                <?php echo $this->getChildHtml('currency') ?>     
+                            </div>
+                            <?php echo ($this->getLayout()->createBlock('cms/block')->setBlockId('header_info')->toHtml()); ?>
+                            <div class="clear"></div>
+                        </div>
 
-    <div class="toolbar">
-        <p>Track your order</p>
-        <img src="https://d1jbf5z8givhnm.cloudfront.net/skin/frontend/unifiedtheme/default/images/pblogo_bold_v3.png" alt="PipaBela" height="50px;">
-        <div class="icon">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <i class="fa fa-heart"></i>
-            <i class="fa fa-shopping-bag"></i>
-        </div>
-    </div>
-
-    <div class="topnav" id="myTopnav">
-        <a href="#home" >What's New</a>
-        <a href="#news">Shop By Category</a>
-        <a href="#contact">Shop By Collection</a>
-        <a href="#about">Shop By Material</a>
-        <a href="#about">Shop By Price</a>
-        <a href="#about">Shop By Material</a>
-        <a href="#about">Create your jewellery</a>
-        <a href="#about">Rakhi</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-</div> -->
-    
-    
-    
-    
+                        <div class="skip-links"> <span href="#header-account" class="skip-link skip-account"></span></div>
+                        <div id="header-account" class="skip-content"></div>
+                       
+                        <?php if ($this->getIsHomePage()):?>
+                        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+                        <?php else:?>
+                            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                        <?php endif?>
+                        <?php echo $this->getChildHtml('cart_header'); ?>
+                        <div class="f-right">
+                            <div class="quick-access">
+                                <?php echo $this->getChildHtml('topLinks') ?>
+                            </div>  
+                            <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+                            <div class="skip-links-relative">
+                                <?php // echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header_2.phtml')->toHtml(); ?>
+                            </div>
+                            <?php echo $this->getChildHtml('topSearch') ?>
+                        </div>
+                        <div class="clear"></div>
+                </div>
+            </div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<?php echo $this->getChildHtml('topMenu') ?>
+<?php echo $this->getChildHtml('topContainer'); ?>
+<?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
+       <?php  echo ($this->getLayout()->createBlock('cms/block')->setBlockId('slider_1')->toHtml()); ?>
+<?php endif;  ?>
