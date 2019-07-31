@@ -34,29 +34,43 @@ function fetchProducts () {
         url: listingApiPath,
         type: "GET",
         success: function(data) {
-            var parentEl = $j('#productContainer')
+            
             var _data = data.results.data;
             
-            /* Show  Product Name */
-            parentEl.find(`.productName`).each(function(i) {
-                $j(this).html('');
-                $j(this).html(_data[i].name);
-            });
+            $j('#productContainer').empty();
+            
+            for (var i = 0; i < _data.length; i++) {
+                createProductDiv(_data[i]);
+            }
 
-            /* Show  Product Image */
-            parentEl.find(`.productImage`).each(function(i) {
-                $j(this).attr('src', $j(this).attr('src').replace($j(this).attr('src'), _data[i].image1));
-            });
-
-            /* Show  Product Price */
-            parentEl.find(`.productPrice`).each(function(i) {
-                $j(this).html('');
-                $j(this).html(`₹ ${_data[i].price}`);
-            });
-
-            /* loading product content */
             $j('#productContainer').show();
             $j('#loading').hide();
         }
     });
+}
+
+
+function createProductDiv(productDetails) {
+    /* Created Dynamic HTML elements */
+    var product =  $j("<div>",{
+                        class: 'product'
+                    }).appendTo('#productContainer');
+
+    $j("<img>",{
+                class: 'productImage',
+                width: "250",
+                height: "350",
+                src: productDetails.image1,
+                alt: productDetails.name
+            }).appendTo(product);
+
+     $j("<p>",{
+                class: 'productName',
+            }).appendTo(product);
+            $j(".productName").html(productDetails.name);
+                
+    $j("<div>",{
+                class: 'productPrice'
+            }).appendTo(product);
+            $j(".productName").html("₹ " + productDetails.name);
 }
