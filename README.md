@@ -47,13 +47,13 @@ Functionality of projects
 
 # Screenshots of Landing page
 
-![Desktop-view](https://github.com/rrhythmsharma/Magento-1.8/screenshots/desktop-view.png)
+![Desktop-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/desktop-view.png)
 
-![Ipad-view](https://github.com/rrhythmsharma/Magento-1.8/screenshots/ipad.png)
+![Ipad-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/ipad.png)
 
-![mobile-navbar](https://github.com/rrhythmsharma/Magento-1.8/screenshots/mobile-navbar.gif)
+![mobile-navbar](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/mobile-navbar.gif)
 
-![mobile-view](https://github.com/rrhythmsharma/Magento-1.8/screenshots/mobile-view.png)
+![mobile-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/mobile-view.png)
 
-![Naxt-page&&loader.gif](https://github.com/rrhythmsharma/Magento-1.8/screenshots/Naxt-page&&loader.gif)
+![Naxt-page&&loader.gif](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/Naxt-page%26%26loader.gif)
 
