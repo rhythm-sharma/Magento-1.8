@@ -6,7 +6,12 @@
     justify-content: center;
 }
 
-.productName{
+.product-image{
+  width: 250px !important;
+  height: 350px !important;
+}
+
+.product-name{
     font-weight: 900;
     width: 250px;
     white-space: nowrap;
@@ -14,7 +19,7 @@
     text-overflow: ellipsis;
 }    
 
-.productPrice{
+.product-price{
   font-weight: 900;
   font-size: 16px;
 }

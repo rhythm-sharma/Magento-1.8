@@ -57,20 +57,18 @@ function createProductDiv(productDetails) {
                     }).appendTo('#productContainer');
 
     $j("<img>",{
-                class: 'productImage',
-                width: "250",
-                height: "350",
+                class: 'product-image',
                 src: productDetails.image1,
                 alt: productDetails.name
             }).appendTo(product);
 
      $j("<p>",{
-                class: 'productName',
+                class: 'product-name',
+                text: productDetails.name
             }).appendTo(product);
-            $j(".productName").html(productDetails.name);
                 
     $j("<div>",{
-                class: 'productPrice'
+                class: 'product-price',
+                text: "₹ " + productDetails.price
             }).appendTo(product);
-            $j(".productName").html("₹ " + productDetails.name);
 }
