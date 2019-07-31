@@ -1,9 +1,9 @@
 var $j = jQuery.noConflict();
 
 const LISTING_API_PATH = 'https://optimus.pipabella.com/v1/search/67';
-var sortType = "New%20Arrivals";
+const sortType = "New%20Arrivals";
 var pageNo = 1;
-var rowNo = 10;
+const rowNo = 10;
 
 $j(document).ready(function() {
     $j("#swipe").hide();
@@ -34,34 +34,29 @@ function fetchProducts () {
         url: listingApiPath,
         type: "GET",
         success: function(data) {
-            showProductAttr('productContainer', 'product', 'productName', data);
-            showProductAttr('productContainer', 'product', 'productImage', data);
-            showProductAttr('productContainer', 'product', 'productPrice', data);
-            setTimeout(function(){
-                $j('#productContainer').show();
-                $j('#loading').hide();
-            },2000)
-        }
-    });
-}
-
-function showProductAttr(parent, child, grandchild, data) {
-    
-    $j(`#${parent}`).children(`.${child}`).children(`.${grandchild}`).each(function(i) {
-        
-        if(grandchild === 'productName'){
-            $j(this).html('');
-            $j(this).html(data.results.data[i].name);
-        }
-        
-        if(grandchild === 'productImage'){
+            var parentEl = $j('#productContainer')
+            var _data = data.results.data;
             
-            $j(this).attr('src', $j(this).attr('src').replace($j(this).attr('src'), data.results.data[i].image1));
-        }
+            /* Show  Product Name */
+            parentEl.find(`.productName`).each(function(i) {
+                $j(this).html('');
+                $j(this).html(_data[i].name);
+            });
 
-        if(grandchild === 'productPrice'){
-            $j(this).html('');
-            $j(this).html(`₹ ${data.results.data[i].price}`);
+            /* Show  Product Image */
+            parentEl.find(`.productImage`).each(function(i) {
+                $j(this).attr('src', $j(this).attr('src').replace($j(this).attr('src'), _data[i].image1));
+            });
+
+            /* Show  Product Price */
+            parentEl.find(`.productPrice`).each(function(i) {
+                $j(this).html('');
+                $j(this).html(`₹ ${_data[i].price}`);
+            });
+
+            /* loading product content */
+            $j('#productContainer').show();
+            $j('#loading').hide();
         }
     });
 }
