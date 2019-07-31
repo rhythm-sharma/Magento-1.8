@@ -45,4 +45,4 @@ Functionality of projects
 ### step-7 Added Navbar function in navbar.js
 1. Added `openNav()` and `closeNav()` on  hamberger icon to open and close navbar item in mobile view
 
-## You can find screenshots inside screenshot folder
+## Please have a look at screenshots inside screenshot folder
