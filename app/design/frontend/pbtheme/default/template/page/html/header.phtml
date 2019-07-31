@@ -30,7 +30,7 @@
 ?>
 <div class="shadow"></div>
 <div class="swipe-left"></div>
-<div class="swipe">
+<div id="swipe" class="swipe">
     <div class="swipe-menu">
         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->__('Home') ?>" class="home-link"><?php echo $this->__('Home') ?></a>
         <?php echo $this->getChildHtml('topLinks') ?>
@@ -45,13 +45,13 @@
         </div>
     </div>
 </div>
-<div class="top-icon-menu">
+<div id="top-icon-menu" class="top-icon-menu">
     <div class="swipe-control"><i class="fa fa-align-justify"></i></div>
     <div class="top-search"><i class="fa fa-search"></i></div>
     <span class="clear"></span>
 </div>
 
-<div class="header-container">
+<div id="header-container" class="header-container">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">

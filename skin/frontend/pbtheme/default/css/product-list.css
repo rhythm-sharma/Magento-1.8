@@ -85,6 +85,7 @@
 .toolbar {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background-color: white;
   top: 0px;
   left: 0px;
@@ -123,26 +124,9 @@
   color: #d62598;
 }
 
-.pb {
-  margin-left: auto;
-  margin-right: 0px;
-}
-
-.icons {
-  margin-right: 0;
-  margin-left: auto;
-}
-
-.search-bar, .user-log, .whishlist, .shopping-cart  {
-  margin: 8px 3px 0 3px;
-}
-
-.toolbar a.icon {
-  display: none;
-}
-
-.topnav-icon{
-  display: none;  
+.pb-img{
+  display: flex;
+  justify-content: center;
 }
 
 .hamberger-icon, #Sidenav{
@@ -156,21 +140,19 @@
     display: none;
   }
 
-  .topnav-icon{
-    display: block;
-  }
-
-  .topnav-icon > .whishlist, .topnav-icon > .shopping-cart {
-    margin: 2px 2px 5px 2px;
-  }
-
-  .topnav{
+  .toolbar{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 
-  .icons > .whishlist, .icons > .shopping-cart  {
-    display: none;
+  .hamberger-icon{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .pb-img{
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hamberger-icon, #Sidenav{
@@ -185,11 +167,11 @@
 
   .sidenav {
     height: 100%;
-    width: 0;
+    width: 300px;
     position: fixed;
     z-index: 99999;
     top: 0px;
-    left: 0;
+    left: -300px;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
@@ -222,5 +204,5 @@
  
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav a {font-size: 16px;}
 }
