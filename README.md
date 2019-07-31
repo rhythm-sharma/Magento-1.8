@@ -45,15 +45,4 @@ Functionality of projects
 ### step-7 Added Navbar function in navbar.js
 1. Added `openNav()` and `closeNav()` on  hamberger icon to open and close navbar item in mobile view
 
-# Screenshots of Landing page
-
-![Desktop-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/desktop-view.png)
-
-![Ipad-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/ipad.png)
-
-![mobile-navbar](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/mobile-navbar.gif)
-
-![mobile-view](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/mobile-view.png)
-
-![Naxt-page&&loader.gif](https://github.com/rrhythmsharma/Magento-1.8/blob/master/screenshots/Naxt-page%26%26loader.gif)
-
+## You can find screenshots inside screenshot folder
