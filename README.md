@@ -33,7 +33,7 @@ Functionality of projects
 ### step-5 Added `AJAX` call in listing.js
 1. Fetched the api data using `AJAX` call
 2. On successful fetch of data the page will show images with it's price and name below it
-3. implemented a iteration over child elements to show images, price and name of respective parent elements.
+3. implemented a iteration which creates HTML elements dynamically and show image, price and name through API data.
 
 
 ### step-6 Added Responsive fixed navbar and toolbar css
