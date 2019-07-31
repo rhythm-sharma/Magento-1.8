@@ -134,7 +134,7 @@
 }
 
 .search-bar, .user-log, .whishlist, .shopping-cart  {
-  margin: 5px 3px 0 3px;
+  margin: 8px 3px 0 3px;
 }
 
 .toolbar a.icon {
@@ -157,7 +157,11 @@
   }
 
   .topnav-icon{
-    display: block;  
+    display: block;
+  }
+
+  .topnav-icon > .whishlist, .topnav-icon > .shopping-cart {
+    margin: 2px 2px 5px 2px;
   }
 
   .topnav{
