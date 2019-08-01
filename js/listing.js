@@ -11,12 +11,13 @@ $j(document).ready(function() {
     $j("#header-container").hide();
     $j(".actions").hide();
     $j("#loadMoreBtn").click(function () {
+        $j("#loading").show();
+        $j("#loadMoreBtn").hide();    
         fetchProducts()
     });
+    
+    fetchProducts();
 });
-
-
-fetchProducts();
 
 function fetchProducts () {
     
@@ -36,6 +37,10 @@ function fetchProducts () {
             for (var i = 0; i < _data.length; i++) {
                 createProductDiv(_data[i]);
             }
+
+            $j("#loading").hide();
+            $j("#loadMoreBtn").show();    
+
         }
     });
 }
