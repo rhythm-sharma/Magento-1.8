@@ -7,8 +7,9 @@
 }
 
 .product-image{
-  width: 250px !important;
-  height: 350px !important;
+  max-width: 100%;
+  height: auto;
+  width: 250px;
 }
 
 .product-name{
@@ -28,7 +29,6 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    transition: 0.1s ease-in;
 }
 
 .container {
@@ -39,6 +39,10 @@
 .button-container{
   display: flex;
   justify-content: center;
+}
+
+#buttonContainer{
+  margin: 15px;
 }
 
 .btn-loading-container{

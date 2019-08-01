@@ -6,16 +6,19 @@ var pageNo = 1;
 const rowNo = 10;
 
 $j(document).ready(function() {
+    // $j("#loadMoreBtn").hide();
     $j("#swipe").hide();
     $j("#top-icon-menu").hide();
     $j("#header-container").hide();
     $j(".actions").hide();
-    $j("#loadMoreBtn").click(function () {
+    $j("#loading").show();
+
+    $j("#buttonContainer").click(function () {
         $j("#loading").show();
         $j("#loadMoreBtn").hide();    
-        fetchProducts()
+        fetchProducts();
     });
-    
+
     fetchProducts();
 });
 
@@ -29,17 +32,19 @@ function fetchProducts () {
         type: "GET",
         success: function(data) {
             
-            var _data = data.results.data;
-            console.log(_data);
-            
-            // $j('#productContainer').empty();
 
+            $j('#buttonContainer').empty();
+            
+            var _data = data.results.data;
+           
             for (var i = 0; i < _data.length; i++) {
                 createProductDiv(_data[i]);
             }
 
+            createLoadMoreButton();
+            
             $j("#loading").hide();
-            $j("#loadMoreBtn").show();    
+            $j("#loadMoreBtn").show();  
 
         }
     });
@@ -69,4 +74,17 @@ function createProductDiv(productDetails) {
         text: "₹ " + productDetails.price
     }).appendTo(product);
 
+}
+
+
+function createLoadMoreButton() {
+
+    var button =  $j("<button>",{
+        id: 'loadMoreBtn',
+        class:'load-more-btn'
+    }).appendTo('#buttonContainer');
+
+    $j("<span>",{
+        text: "Load More"
+    }).appendTo(button);
 }
