@@ -1,4 +1,4 @@
-Functionality of projects 
+# Functionality of projects 
 
 ##### Project has a product landing page which is hosted on `localhost/magento/product-list`. The product landing page has a navigation bar, toolbar and products. When user clicks on navbar items user redirects to the Landing page. The Landing page shows 10 products which includes image, name and price of every product. 
              

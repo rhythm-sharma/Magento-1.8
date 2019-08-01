@@ -10,16 +10,9 @@ $j(document).ready(function() {
     $j("#top-icon-menu").hide();
     $j("#header-container").hide();
     $j(".actions").hide();
-    $j("#next-button").click(function () {
-        $j("html, body").animate({ scrollTop: 0 }, 50);
-        $j('#productContainer').hide();
-        $j('#loading').show();
+    $j("#loadMoreBtn").click(function () {
         fetchProducts()
     });
-
-    /* loading gif */
-    $j('#productContainer').hide();
-    $j('#loading').show();
 });
 
 
@@ -36,15 +29,13 @@ function fetchProducts () {
         success: function(data) {
             
             var _data = data.results.data;
+            console.log(_data);
             
-            $j('#productContainer').empty();
-            
+            // $j('#productContainer').empty();
+
             for (var i = 0; i < _data.length; i++) {
                 createProductDiv(_data[i]);
             }
-
-            $j('#productContainer').show();
-            $j('#loading').hide();
         }
     });
 }
@@ -52,23 +43,25 @@ function fetchProducts () {
 
 function createProductDiv(productDetails) {
     /* Created Dynamic HTML elements */
+    
     var product =  $j("<div>",{
-                        class: 'product'
-                    }).appendTo('#productContainer');
+        class: 'product'
+    }).appendTo('#productContainer');
 
     $j("<img>",{
-                class: 'product-image',
-                src: productDetails.image1,
-                alt: productDetails.name
-            }).appendTo(product);
-
-     $j("<p>",{
-                class: 'product-name',
-                text: productDetails.name
-            }).appendTo(product);
-                
+        class: 'product-image',
+        src: productDetails.image1,
+        alt: productDetails.name
+    }).appendTo(product);
+    
+    $j("<p>",{
+        class: 'product-name',
+        text: productDetails.name
+    }).appendTo(product);
+    
     $j("<div>",{
-                class: 'product-price',
-                text: "₹ " + productDetails.price
-            }).appendTo(product);
+        class: 'product-price',
+        text: "₹ " + productDetails.price
+    }).appendTo(product);
+
 }
